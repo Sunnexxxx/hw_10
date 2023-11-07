@@ -1,23 +1,22 @@
 from django.shortcuts import render
-from .models import Band, Genre
+from .models import Band
 
 
 def main_page(request):
-    data = Genre.objects.all()
+    data = Band.objects.all()
+    print()
+    print(data)
+    print()
     return render(request, 'main/index_main.html', {'data': data})
 
 
 def band_page(request, genre, slug):
-    find = Genre.objects.get(genre=genre).pk
-    data = Band.objects.filter(genre=find).get(slug=slug)
-    print()
-    print(data)
+    data = Band.objects.filter(genre=genre).get(slug=slug)
     return render(request, 'main/index_band.html', {'data': data})
 
 
 def about_page(request, genre):
-    find = Genre.objects.get(genre=genre).pk
-    data = Band.objects.filter(genre=find)
+    data = Band.objects.filter(genre=genre)
     return render(request, 'main/index_about.html', {'data': data})
 
 
