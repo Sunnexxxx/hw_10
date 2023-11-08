@@ -3,7 +3,8 @@ from .models import Band
 
 
 def main_page(request):
-    data = Band.objects.all()
+    context = Band.objects.all()
+    data = set([i.genre for i in context])
     print()
     print(data)
     print()
