@@ -26,7 +26,6 @@ class Band(models.Model):
     genre = models.CharField(max_length=20, choices=GENRE_CHOICES)
     name = models.CharField(max_length=255)
     description = models.TextField()
-    image = models.ImageField(upload_to='media', max_length=255, null=True, blank=True)
     slug = models.SlugField(blank=True, null=True, max_length=255)
 
     def __str__(self):
