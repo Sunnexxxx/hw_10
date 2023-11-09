@@ -11,10 +11,10 @@
 </head>
 <body>
     {% for i in data %}
-            <div class="box">
-                <h1>{{ i }}</h1>
-                <a href="{% url 'about' genre=i %}">Link</a>
-            </div>
+        <div class="box">
+            <h1>{{ i }}</h1>
+            <a href="{% url 'about' genre=i %}">Link</a>
+        </div>
     {% endfor %}
 </body>
 </html>

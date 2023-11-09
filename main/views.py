@@ -11,8 +11,8 @@ def main_page(request):
     return render(request, 'main/index_main.html', {'data': data})
 
 
-def band_page(request, genre, slug):
-    data = Band.objects.filter(genre=genre).get(slug=slug)
+def band_page(request, genre, slug, image):
+    data = Band.objects.filter(genre=genre).get(slug=slug).get(image=image)
     return render(request, 'main/index_band.html', {'data': data})
 
 
